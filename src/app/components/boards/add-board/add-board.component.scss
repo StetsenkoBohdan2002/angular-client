@@ -1,0 +1,75 @@
+@import '_variables';
+.add-board {
+   &__wrapper {
+      width: 100%;
+      background-color: rgba(rgb(0, 0, 0), 0.7);
+      position: absolute;
+      height: 100%;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      backdrop-filter: blur(5px);
+   }
+
+   &__form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: space-around;
+      height: 100%;
+   }
+   &__title{
+      text-transform: uppercase;
+   }
+
+   &__content {
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fff;
+      width: 600px;
+      height: 400px;
+      border-radius: 20px;
+   }
+
+   &__input {
+      border: 2px solid $main-color-darker;
+      width: 100%;
+      padding: 7px 30px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 5px rgba(128, 128, 128, 0.438);
+      margin-top: 5px;
+      transition: all 0.2s ease-in-out;
+
+      &:focus-visible {
+         transform: translateY(-2px);
+      }
+   }
+   &__label {
+      align-self: start;
+      text-transform: uppercase;
+   }
+   &__btn {
+      background-color: transparent;
+      background-color: #000;
+      color:#fff;
+      width: 100%;
+      padding: 20px 0;
+      text-transform: uppercase;
+      border-radius: 20px;
+      border:none;
+      font-size: 24px;
+
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+   
+      &:hover {
+         background-color: $main-color-darker;
+      }
+   }
+}
+

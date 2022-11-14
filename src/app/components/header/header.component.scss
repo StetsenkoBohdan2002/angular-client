@@ -1,0 +1,112 @@
+@import '../../../styles/variables';
+
+.header {
+   width: 100%;
+   background-color: $header-color;
+   height: 8vh;
+   display: flex;
+   border-bottom: 4px solid $main-color-darker;
+
+   &-wrapper {
+      height: 100%;
+      display: flex;
+      width: 100%;
+   }
+
+   &-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      &__list {
+         display: flex;
+         width: 50%;
+         justify-content: space-around;
+      }
+
+      &__item {
+         width: 150px;
+         background-color: $main-color-darker;
+         display: flex;
+         justify-content: center;
+         padding: 5px 0;
+         border-radius: 20px;
+         cursor: pointer;
+         transition: all 0.2s ease-in-out;
+         box-shadow: 0 0 10px #000;
+
+         &:hover {
+            transform: scale(1.1);
+         }
+      }
+
+      &__link {
+         text-decoration: none;
+         color: #fff;
+         text-transform: uppercase;
+         letter-spacing: 3px;
+         font-size: 18px;
+      }
+   }
+
+   &-profile {
+      width: 15%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+}
+
+.profile {
+   &-img {
+      box-shadow: 0 0 10px #000;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+      &:hover {
+         transform: scale(1.1);
+      }
+   }
+
+   &-name {
+      margin-left: 20px;
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #fff;
+   }
+   &-modal{
+      &.show{
+         display: flex;
+      }
+      background-color: #fff;
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      box-shadow:0 3px 3px rgba(0, 0, 0, 0.342);
+      justify-content: center;
+      top: 70px;
+      height: 120px;
+      width: 160px;
+      border-radius:10px;
+      &__item{
+         background-color:transparent;
+         border: none;
+         padding: 10px 30px;
+         transition: all 0.1s ease-in-out;
+         display: flex;
+         justify-content: center;
+         &:hover{
+            background-color: rgb(235, 235, 235);
+            cursor: pointer;
+         }
+      }
+   }
+}
+
+.active{
+   background-color: $main-color-dark;
+}

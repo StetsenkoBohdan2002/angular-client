@@ -1,0 +1,35 @@
+<div class="board-info__wrapper modal">
+   <div class="board-info__content" (clickOutsideModal)="showModal($event)">
+      <div class="board_info__main" *ngIf="!editBoard">
+         <div class="board-info__name">Name: {{board.boardName}}</div>
+         <div class="board-info__desc">Description: {{board.boardDesc|shorter:20}}</div>
+         <div class="board-info__date">Date: {{board.createdDate|date}}</div>
+         <div class="board-info__todo">Todo Tasks: {{board.tasks.todo}}</div>
+         <div class="board-info__todo">In progress Tasks: {{board.tasks.progress}}</div>
+         <div class="board-info__todo">Done Tasks: {{board.tasks.done}}</div>
+         <div class="board-info__edit" (click)="editBoard=!editBoard">
+            &#9998;
+         </div>
+      </div>
+      <div class="board-info__edit-form" *ngIf="editBoard">
+         <form [formGroup]="infoForm" class="board-info__form">
+            <div>
+               <label for="board-name" class="board-info__label">Board Name: </label>
+               <input id="board-name" type="text" formControlName="boardName" class="board-info__input">
+            </div>
+            <div>
+               <label for="board-desc" class="board-info__label">Board Description: </label>
+               <input id="board-desc" type="text" formControlName="boardDesc" class="board-info__input">
+            </div>
+
+            <div class="board-info__btn_wrapper">
+               <button class="board-info__btn" (click)="updateBoard()">Update Board</button>
+            </div>
+            <div class="board-info__close" (click)="editBoard=!editBoard">
+               <span></span>
+               <span></span>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>

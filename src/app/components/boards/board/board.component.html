@@ -1,0 +1,15 @@
+<li class="boards-list__item" (click)="openBoard()">
+   <div class="boards-list__item__name">{{board.boardName}}</div>
+   <div class="boards-list__item__desc">{{board.boardDesc|
+      shorter:70}}</div>
+   <div class="boards-list__item__time">{{board.createdDate | date}}</div>
+   <div class="boards-list__item_delete" (click)="deleteBoard($event)">
+      <span></span>
+      <span></span>
+   </div>
+   <div class="boards-list__item_info" (click)="openBoardModal($event,true)">
+      i
+   </div>
+</li>
+
+<app-board-info *ngIf="openBoardInfo" (openModal)="openBoardModal($event)" [board]="board"></app-board-info>

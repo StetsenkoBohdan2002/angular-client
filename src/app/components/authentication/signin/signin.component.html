@@ -1,0 +1,27 @@
+<form [formGroup]="profileForm" class="form">
+   <div class="icon-lock">
+      <div class="lock-top-1"></div>
+      <div class="lock-top-2"></div>
+      <div class="lock-body"></div>
+      <div class="lock-hole"></div>
+   </div>
+   <div class="form-title">
+      <h2>Login</h2>
+   </div>
+   <label for="last-name" class="form-label">Email: </label>
+   <input id="email" type="email" formControlName="email" class="form-input">
+
+   <label for="password" class="form-label">Password: </label>
+   <input id="password" type="password" formControlName="password" class="form-input">
+
+   <label for="confirm-password" class="form-label">Confirm Password: </label>
+   <input id="confirm-password" type="password" formControlName="confirmPassword" class="form-input">
+   <div class="form-btn-wrapper">
+      <button class="form-btn" (click)="signIn()">Sign In</button>
+   </div>
+   <div class="form-link-wrapper">
+      <a class="form-link" [routerLink]="['../register']" style="text-decoration: none;color:inherit">Don't have an
+         account? Sign Up</a>
+   </div>
+</form>
+<app-error-modal [error]="error"></app-error-modal>

@@ -1,0 +1,33 @@
+<div class="comments-wrapper">
+   <div class="comments-content">
+      <div class="task-info">
+         <div class="task-wrapper">
+            <div class="task-name">{{task.taskName}}</div>
+         </div>
+      </div>
+      <div class="add-comment__wrapper">
+         <div class="add-comment__content">
+            <form class="add-comment__form">
+               <div class="add-comment__form-part">
+                  <label for="comment-name" class="add-comment__label">Comment Name: </label>
+                  <input name="title" #titleInput (keyup)="validInput()" id="comment-name" type="text"
+                     class="add-comment__input" [(ngModel)]="commentTitle">
+               </div>
+               <div class="add-comment__btn_wrapper">
+                  <button class="add-comment__btn" (click)="createComment()">Create comment</button>
+               </div>
+            </form>
+         </div>
+      </div>
+      <div class="comments-list">
+         <div *ngIf="commentsList.length<1" class="no-commnets">There are no comments!</div>
+         <div class="comments-item" *ngFor="let comment of commentsList">
+            <div class="comments-name">{{comment.commentName}}</div>
+         </div>
+      </div>
+      <div class="go-back" [routerLink]="['/tasks',task._id]">
+         <a style="text-decoration: none;color:inherit">Go back
+         </a>
+      </div>
+   </div>
+</div>

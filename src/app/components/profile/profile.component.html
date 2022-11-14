@@ -1,0 +1,31 @@
+<div class="profile">
+   <div class="profile-wrapper">
+      <div class="profile-content">
+         <div class="profile-left">
+            <img [src]='user.userImg' alt="Profile img" class="profile-img">
+            <div class="profile-name">{{user.firstName}} {{user.lastName}}</div>
+         </div>
+         <div class="profile-right">
+            <div class="profile-right__title">
+               Information
+            </div>
+            <div class="profile-info">
+               Email: {{user.email}}
+            </div>
+            <div class="profile-info">
+               Name: {{user.firstName}}
+            </div>
+            <div class="profile-info">
+               Last name: {{user.lastName}}
+            </div>
+            <div class="profile-info">
+               Created date: {{user.createdDate}}
+            </div>
+            <div class="go-back" [routerLink]="['../boards']">
+               <a style="text-decoration: none;color:inherit">Go back
+               </a>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

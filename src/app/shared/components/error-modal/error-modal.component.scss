@@ -1,0 +1,60 @@
+@import '_variables';
+
+@keyframes show {
+   0% {
+      left: -500px
+   }
+
+   30% {
+      left: 0%
+   }
+
+   70% {
+      left: 0%
+   }
+
+   100% {
+      left: -500px
+   }
+}
+
+.error {
+   &-wrapper {
+      position: absolute;
+      bottom: 200px;
+      left: -500px;
+      width: 400px;
+      border: 2px solid $error-color-darker;
+      height: 100px;
+      border-radius: 0 20px 20px 0;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 24px;
+      font-weight: 400;
+      background-color: $error-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+   }
+
+   &-smile {
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      color: $error-color;
+      border: 2px solid $error-color-darker;
+      background-color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+}
+
+.show {
+   animation-name: show;
+   animation-duration: 4s;
+}

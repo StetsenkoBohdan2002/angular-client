@@ -1,0 +1,31 @@
+@import '_variables.scss';
+
+.logo {
+   display: flex;
+   text-transform: uppercase;
+   font-size: 24px;
+   width: 100%;
+
+   @media only screen and (max-width:900) {
+      .logo {
+         display: none;
+      }
+   }
+
+   &-text {
+      color: #fff;
+      padding: 0 5px;
+      letter-spacing: 3px;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+         padding: 0 10px;
+      }
+   }
+
+   &-left,
+   &-right {
+      color: $main-color;
+   }
+}

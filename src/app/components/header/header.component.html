@@ -1,0 +1,24 @@
+<header class="header" (clickOutside)="showModal=$event">
+   <div class="container">
+      <div class="header-wrapper">
+         <nav class="header-nav">
+            <app-logo [routerLink]="['']"></app-logo>
+            <ul class="header-nav__list" *ngIf="checkLogin">
+               <li class="header-nav__item" [routerLinkActive]="'active'" [routerLink]="['boards']"><a class="header-nav__link">Boards</a></li>
+               <li class="header-nav__item" [routerLinkActive]="'active'" [routerLink]="['profile']"><a class="header-nav__link">About</a></li>
+            </ul>
+            <app-button [title]="btnTitle" (click)="checkStatus()" *ngIf="!checkLogin"></app-button>
+            <div class="header-profile" *ngIf="checkLogin">
+               <img [src]='user.userImg' alt="Profile img" class="profile-img" (click)="onShowModal()">
+               <div class="profile-name">{{user.firstName}}  {{user.lastName}}</div>
+               <div class="profile-modal show" *ngIf="showModal" clickOutside>
+                  <a class="profile-modal__item" (click)="logout()">Logout</a>
+                  <a class="profile-modal__item" (click)="onShowModal()" [routerLink]="['/profile']"
+                     style="text-decoration: none;color:inherit">Check Profile</a>
+               </div>
+            </div>
+
+         </nav>
+      </div>
+   </div>
+</header>

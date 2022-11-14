@@ -1,0 +1,182 @@
+@import '_variables';
+
+.board {
+   &-info {
+      &__form {
+         display: flex;
+         flex-direction: column;
+         width: 100%;
+         justify-content: space-around;
+         height: 100%;
+      }
+
+      &__label {
+         align-self: start;
+         text-transform: uppercase;
+      }
+
+      &__input {
+         border: 2px solid $main-color-darker;
+         width: 100%;
+         padding: 7px 30px;
+         border-radius: 10px;
+         margin-bottom: 10px;
+         box-shadow: 0 2px 5px rgba(128, 128, 128, 0.438);
+         margin-top: 5px;
+         transition: all 0.2s ease-in-out;
+
+         &:focus-visible {
+            transform: translateY(-2px);
+         }
+      }
+
+      &__btn {
+         background-color: transparent;
+         background-color: #000;
+         color: #fff;
+         width: 100%;
+         padding: 20px 0;
+         text-transform: uppercase;
+         border-radius: 20px;
+         border: none;
+         font-size: 24px;
+
+         cursor: pointer;
+         transition: all 0.3s ease-in-out;
+
+         &:hover {
+            background-color: $main-color-darker;
+         }
+      }
+
+      &__edit,
+      &__close {
+         width: 40px;
+         height: 40px;
+         position: absolute;
+         background-color: rgb(226, 83, 0);
+         right: 20px;
+         top: 20px;
+         border-radius: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         transition: all 0.2s ease-in-out;
+         color: #fff;
+         cursor: pointer;
+
+         &:hover {
+            transform: scale(1.1);
+            background-color: rgb(161, 59, 0);
+         }
+      }
+
+      &__close {
+
+         background-color: $error-color;
+
+         &:hover {
+            background-color: $error-color-darker;
+         }
+
+         &>span {
+            width: 50%;
+            position: absolute;
+
+            &:nth-child(1) {
+               left: 50%;
+               transform: translateX(-50%) rotate(45deg);
+            }
+
+            &:nth-child(2) {
+               left: 50%;
+               transform: translateX(-50%) rotate(-45deg);
+
+            }
+
+            height: 5px;
+            background-color: #fff;
+
+
+         }
+      }
+
+      &__wrapper {
+         width: 100%;
+         background-color: rgba(rgb(0, 0, 0), 0.7);
+         position: absolute;
+         height: 100%;
+         left: 0;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         top: 0;
+         backdrop-filter: blur(5px);
+         z-index: 2;
+      }
+
+      &__content {
+         padding: 50px;
+         font-size: 30px;
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         background-color: #fff;
+         width: 700px;
+         min-height: 350px;
+         position: relative;
+         border-radius: 20px;
+      }
+
+      &__input {
+         border: 2px solid $main-color-darker;
+         width: 100%;
+         padding: 7px 30px;
+         border-radius: 10px;
+         margin-bottom: 10px;
+         box-shadow: 0 2px 5px rgba(128, 128, 128, 0.438);
+         margin-top: 5px;
+         transition: all 0.2s ease-in-out;
+
+         &:focus-visible {
+            transform: translateY(-2px);
+         }
+      }
+
+      &__label {
+         align-self: start;
+         text-transform: uppercase;
+      }
+
+      &__btn {
+         background-color: transparent;
+         background-color: #000;
+         color: #fff;
+         width: 100%;
+         padding: 20px 0;
+         text-transform: uppercase;
+         border-radius: 20px;
+         border: none;
+         font-size: 24px;
+
+         cursor: pointer;
+         transition: all 0.3s ease-in-out;
+
+         &:hover {
+            background-color: $main-color-darker;
+         }
+      }
+   }
+}
+
+
+input.ng-invalid {
+   outline: $error-color solid 1px;
+   border: 2px solid $error-color;
+
+}
+
+input.ng-valid {
+   outline: $main-color solid 1px;
+   border: 2px solid $main-color;
+}

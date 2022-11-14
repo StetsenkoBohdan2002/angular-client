@@ -1,0 +1,19 @@
+@import '../../../../styles/variables';
+
+.btn {
+   background-color: transparent;
+   padding: 5px 30px;
+   border: 2px solid $main-color;
+   border-radius: 20px 0 20px 0;
+   color: #fff;
+   text-transform: uppercase;
+   font-weight: 600;
+   letter-spacing: 5px;
+   transition: all 0.2s ease-in-out;
+   cursor: pointer;
+
+   &:hover {
+      border-radius: 0 20px 0 20px;
+      background-color: rgba($color: $main-color-lighter, $alpha: 0.2);
+   }
+}

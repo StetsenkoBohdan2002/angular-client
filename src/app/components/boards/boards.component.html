@@ -1,0 +1,31 @@
+<div class="boards-wrapper">
+   <div class="boards-content">
+      <div class="boards__info">
+         <h2 class="boards-content__title">Dashboard</h2>
+         <div class="boards__filter">
+            <input type="text" [(ngModel)]="filter" placeholder="Filter">
+            <select name="" id="" [(ngModel)]="sort">
+               <optgroup label="Property">
+                  <option value="boardName">Name</option>
+                  <option value="boardDesc">Description</option>
+               </optgroup>
+            </select>
+            <select name="" id="" [(ngModel)]="order">
+               <optgroup label="Property">
+                  <option value="ASC">ASC</option>
+                  <option value="DESC">DESC</option>
+               </optgroup>
+            </select>
+         </div>
+      </div>
+      <div class="boards-main">
+         <ul class="boards-list">
+            <li class="boards-list__item"><button class="boards-list__item_add" (click)="openBoardModal()">+</button>
+            </li>
+            <app-board *ngFor="let boardItem of (boards|filter:filter|sortBy:sort:order)" [board]="boardItem">
+            </app-board>
+         </ul>
+         <app-add-board *ngIf="openModal" (openModal)="openBoardModal($event)"></app-add-board>
+      </div>
+   </div>
+</div>

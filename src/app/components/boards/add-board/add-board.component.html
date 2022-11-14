@@ -1,0 +1,19 @@
+<div class="add-board__wrapper modal">
+   <div class="add-board__content" (clickOutsideModal)="showModal($event)">
+      <h2 class="add-board__title">Add new Board</h2>
+      <form [formGroup]="boardForm" class="add-board__form">
+         <div>
+            <label for="board-name" class="add-board__label">Board Name: </label>
+            <input id="board-name" type="text" formControlName="boardName" class="add-board__input">
+         </div>
+         <div>
+            <label for="board-desc" class="add-board__label">Board Description: </label>
+            <input id="board-desc" type="text" formControlName="boardDesc" class="add-board__input">
+         </div>
+
+         <div class="add-board__btn_wrapper">
+            <button class="add-board__btn" (click)="createBoard()">Create Board</button>
+         </div>
+      </form>
+   </div>
+</div>

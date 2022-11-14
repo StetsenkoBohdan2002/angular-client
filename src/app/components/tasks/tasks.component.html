@@ -1,0 +1,116 @@
+<div class="root">
+  <div class="board">
+    <div class="task-header">
+      <div class="board-bar">
+        <p class="board-name">{{ currentBoard.boardName }}</p>
+        <div class="task__filter">
+          <input type="text" [(ngModel)]="filter" placeholder="Filter">
+          <select name="" id="" [(ngModel)]="sort">
+             <optgroup label="Property">
+                <option value="taskName">Name</option>
+                <option value="createdDate">Date</option>
+             </optgroup>
+          </select>
+          <select name="" id="" [(ngModel)]="order">
+             <optgroup label="Property">
+                <option value="ASC">ASC</option>
+                <option value="DESC">DESC</option>
+             </optgroup>
+          </select>
+       </div>
+      </div>
+    </div>
+    <div class="board-wrapper">
+      <div class="task-container">
+        <div class="task-top">
+          <h2 class="task-title">To do</h2>
+          <input type="color" name="color" class="task-color" [(ngModel)]="todoColor" (change)="changeColor('todo')">
+        </div>
+        <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="currentTasksTodo"
+          [cdkDropListConnectedTo]="[doneList,progressList]" class="task-list todo" (cdkDropListDropped)="drop($event)"
+          [ngStyle]="{'background': currentBoard.todoColor}">
+          <div class="task-box todo" *ngFor="let item of (currentTasksTodo|filter:filter|sortBy:sort:order)" cdkDrag>
+            <p class="task-archive" *ngIf="item.archived">Archived</p>
+            <input class="task-name" [value]="item.taskName" #task>
+            <div class="task-func">
+              <i class="fa-solid fa-pen-to-square" (click)="updateTask(item,task)"></i>
+              <i class="fa-solid fa-box-archive" (click)="archiveTask(item)"></i>
+              <i class="fa-solid fa-trash" (click)="deleteTask(item)"></i>
+            </div>
+            <div class="task-time">{{item.createdDate|date}}</div>
+            <div class="task-comments" (click)="openComments(item._id)">Comments: {{item.commentsCount}}</div>
+          </div>
+          <div class="close-wrapper" [ngClass]="{'hide': !createTodo}">
+            <textarea class="task-textarea" [(ngModel)]="todoTitle"></textarea>
+            <div class="close-textarea" (click)="closeCreate()">
+              <span></span><span></span>
+            </div>
+          </div>
+          <button class="add-task" (click)="createTaskTodo()" [ngClass]="{'confirm': createTodo}">Add Task</button>
+        </div>
+      </div>
+      <div class="task-container">
+        <div class="task-top">
+          <h2 class="task-title">Progress</h2>
+          <input type="color" name="color" class="task-color" [(ngModel)]="progressColor"
+            (change)="changeColor('progress')">
+        </div>
+        <div cdkDropList #progressList="cdkDropList" [cdkDropListData]="currentTasksProgress"
+          [cdkDropListConnectedTo]="[todoList,doneList]" class="task-list progress" (cdkDropListDropped)="drop($event)"
+          [ngStyle]="{'background': currentBoard.progressColor}">
+          <div class="task-box" *ngFor="let item of (currentTasksProgress|filter:filter|sortBy:sort:order)" cdkDrag>
+            <p class="task-archive" *ngIf="item.archived">Archived</p>
+            <input class="task-name" [value]="item.taskName" #task>
+            <div class="task-func">
+              <i class="fa-solid fa-pen-to-square" (click)="updateTask(item,task)"></i>
+              <i class="fa-solid fa-box-archive" (click)="archiveTask(item)"></i>
+              <i class="fa-solid fa-trash" (click)="deleteTask(item)"></i>
+            </div>
+            <div class="task-time">{{item.createdDate|date}}</div>
+            <div class="task-comments" (click)="openComments(item._id)">Comments: {{item.commentsCount}}</div>
+          </div>
+          <div class="close-wrapper" [ngClass]="{'hide': !createProgress}">
+            <textarea class="task-textarea" [(ngModel)]="progressTitle"></textarea>
+            <div class="close-textarea" (click)="closeCreate('progress')">
+              <span></span><span></span>
+            </div>
+          </div>
+          <button class="add-task" (click)="createTaskProgress()" [ngClass]="{'confirm': createProgress}">Add
+            Task</button>
+        </div>
+      </div>
+      <div class="task-container">
+        <div class="task-top">
+          <h2 class="task-title">Done</h2>
+          <input type="color" name="color" class="task-color" [(ngModel)]="doneColor"
+            (change)="changeColor('done')">
+        </div>
+        <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="currentTasksDone"
+          [cdkDropListConnectedTo]="[todoList,progressList]" class="task-list done" (cdkDropListDropped)="drop($event)"
+          [ngStyle]="{'background': currentBoard.doneColor}">
+          <div class="task-box" *ngFor="let item of (currentTasksDone|filter:filter|sortBy:sort:order)" cdkDrag>
+            <p class="task-archive" *ngIf="item.archived">Archived</p>
+            <input class="task-name" [value]="item.taskName" #task>
+            <div class="task-func">
+              <i class="fa-solid fa-pen-to-square" (click)="updateTask(item,task)"></i>
+              <i class="fa-solid fa-box-archive" (click)="archiveTask(item)"></i>
+              <i class="fa-solid fa-trash" (click)="deleteTask(item)"></i>
+            </div>
+            <div class="task-time">{{item.createdDate|date}}</div>
+            <div class="task-comments" (click)="openComments(item._id)">Comments: {{item.commentsCount}}</div>
+          </div>
+          <div class="close-wrapper" [ngClass]="{'hide': !createDone}">
+            <textarea class="task-textarea" [(ngModel)]="doneTitle"></textarea>
+            <div class="close-textarea" (click)="closeCreate('done')">
+              <span></span><span></span>
+            </div>
+          </div>
+          <button class="add-task" (click)="createTaskDone()" [ngClass]="{'confirm': createDone}">Add Task</button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

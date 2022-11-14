@@ -1,0 +1,63 @@
+@import '../../../styles/variables';
+
+.profile {
+   width: 1200px;
+   padding: 50px 0;
+   height: 700px;
+
+   &-wrapper {
+      height: 100%;
+      border: 2px solid $main-color-darker;
+      border-radius: 20px;
+      padding: 20px;
+   }
+
+   &-content {
+      height: 100%;
+      display: flex;
+   }
+
+   &-left {
+      height: 100%;
+      background-color: $header-color;
+      width: 30%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+      border-radius: 20px 0 0 20px;
+
+   }
+
+   &-right {
+      width: 70%;
+      background-color: #fff;
+      border-radius: 0 20px 20px 0;
+      padding: 60px;
+      &__title{
+         text-transform: uppercase;
+         letter-spacing: 5px;
+         font-size: 40px;
+         border-bottom: 4px solid #000;
+      }
+   }
+
+   &-img {
+      width: 100%;
+      border-radius: 20px 20px 0 0;
+      box-shadow: 0 0 10px #000;
+   }
+
+   &-name {
+      color: #fff;
+      text-transform: uppercase;
+      padding-top: 20px;
+      font-size: 30px;
+   }
+
+   &-info{
+      padding: 20px 0;
+      font-size: 20px;
+   }
+}
+
