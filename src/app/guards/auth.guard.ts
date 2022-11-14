@@ -26,7 +26,7 @@ export class AuthGuard implements CanActivate, CanDeactivate<unknown> {
     if (this.authService.checkLogin) {
       return true;
     } else {
-      this.router.navigate(['api/login']);
+      // this.router.navigate(['']);
       return false;
     }
   }

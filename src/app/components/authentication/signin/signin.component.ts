@@ -94,51 +94,6 @@ export class SigninComponent implements OnInit {
               });
           }
         });
-      // this.http
-      //   .post('http://localhost:8080/api/auth/login', this.profileForm.value)
-      //   .subscribe((res: any) => {
-      //     const { userId, userImg, firstName, lastName, email, createdDate } =
-      //       res;
-      //     if (res.status === 200) {
-      //       this.authService.isLoggedIn();
-      //       localStorage.setItem(
-      //         'user-info',
-      //         JSON.stringify({
-      //           userId,
-      //           accessToken: res.jwt_token,
-      //           userImg,
-      //           firstName,
-      //           lastName,
-      //           email,
-      //           createdDate,
-      //         })
-      //       );
-      //       this.store$.dispatch(
-      //         loginSuccess({
-      //           userId,
-      //           accessToken: res.jwt_token,
-      //           userImg,
-      //           firstName,
-      //           lastName,
-      //           email,
-      //           createdDate,
-      //         })
-      //       );
-      //       const httpOptions = {
-      //         headers: new HttpHeaders({
-      //           'Content-Type': 'application/json',
-      //           Authorization: `Token ${res.jwt_token}`,
-      //         }),
-      //       };
-      //       this.http
-      //         .get<Board[]>('http://localhost:8080/api/boards', httpOptions)
-      //         .subscribe((res: Board[]) => {
-      //           this.boardsService.setBoards(res);
-      //         });
-      //       // this.boardsService.setBoards()
-      //       this.router.navigate(['']);
-      //     }
-      //   });
     } else {
       this.error = true;
     }
