@@ -34,7 +34,7 @@ export class BoardsService {
       }),
     };
     return this.http.get<Board[]>(
-      'http://localhost:8080/api/boards',
+      'https://angular-server.onrender.com/api/boards',
       httpOptions
     );
   }
@@ -46,7 +46,7 @@ export class BoardsService {
       }),
     };
     return this.http.delete<Answer>(
-      `http://localhost:8080/api/boards/${id}`,
+      `https://angular-server.onrender.com/api/boards/${id}`,
       httpOptions
     );
   }
@@ -58,7 +58,7 @@ export class BoardsService {
       }),
     };
     return this.http.get<Board>(
-      `http://localhost:8080/api/boards/${id}`,
+      `https://angular-server.onrender.com/api/boards/${id}`,
       httpOptions
     );
   }
@@ -71,7 +71,7 @@ export class BoardsService {
     };
     const obj = form.value;
     return this.http.put<Answer>(
-      `http://localhost:8080/api/boards/${id}`,
+      `https://angular-server.onrender.com/api/boards/${id}`,
       obj,
       httpOptions
     );
@@ -86,6 +86,6 @@ export class BoardsService {
       }),
     };
     const obj = { userId: user.userId, ...form.value };
-    return this.http.post<Answer>('http://localhost:8080/api/boards', obj, httpOptions);
+    return this.http.post<Answer>('https://angular-server.onrender.com/api/boards', obj, httpOptions);
   }
 }

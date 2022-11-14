@@ -35,7 +35,7 @@ export class CommentsService {
       }),
     };
     return this.http.post<Answer>(
-      'http://localhost:8080/api/comments',
+      'https://angular-server.onrender.com/api/comments',
       obj,
       httpOptions
     );
@@ -48,7 +48,7 @@ export class CommentsService {
       }),
     };
     return this.http.get<Comment[]>(
-      `http://localhost:8080/api/comments/${id}`,
+      `https://angular-server.onrender.com/api/comments/${id}`,
       httpOptions
     );
   }

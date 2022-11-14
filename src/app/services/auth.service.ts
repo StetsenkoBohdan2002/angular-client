@@ -34,13 +34,13 @@ export class AuthService {
   }
   registerNewUser(form: FormGroup): Observable<Answer> {
     return this.http.post<Answer>(
-      'http://localhost:8080/api/auth/register',
+      'https://angular-server.onrender.com/api/auth/register',
       form.value
     );
   }
   loginUser(form: FormGroup): Observable<loginUserData> {
     return this.http.post<loginUserData>(
-      'http://localhost:8080/api/auth/login',
+      'https://angular-server.onrender.com/api/auth/login',
       form.value
     );
   }

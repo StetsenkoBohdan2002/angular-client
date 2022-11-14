@@ -44,7 +44,7 @@ export class TasksService {
       }),
     };
     return this.http.get<Task[]>(
-      `http://localhost:8080/api/tasks/${id}`,
+      `https://angular-server.onrender.com/api/tasks/${id}`,
       httpOptions
     );
   }
@@ -56,7 +56,7 @@ export class TasksService {
       }),
     };
     return this.http.put<Answer>(
-      `http://localhost:8080/api/tasks`,
+      `https://angular-server.onrender.com/api/tasks`,
       obj,
       httpOptions
     );
@@ -69,7 +69,7 @@ export class TasksService {
       }),
     };
     return this.http.get<Comment[]>(
-      `http://localhost:8080/api/comments/${id}`,
+      `https://angular-server.onrender.com/api/comments/${id}`,
       httpOptions
     );
   }
@@ -81,7 +81,7 @@ export class TasksService {
       }),
     };
     return this.http.delete<Answer>(
-      `http://localhost:8080/api/tasks/${id}`,
+      `https://angular-server.onrender.com/api/tasks/${id}`,
       httpOptions
     );
   }
@@ -96,7 +96,7 @@ export class TasksService {
       }),
     };
     return this.http.put<Answer>(
-      `http://localhost:8080/api/tasks/archive`,
+      `https://angular-server.onrender.com/api/tasks/archive`,
       obj,
       httpOptions
     );
@@ -112,7 +112,7 @@ export class TasksService {
       }),
     };
     return this.http.post<Answer>(
-      `http://localhost:8080/api/tasks/color`,
+      `https://angular-server.onrender.com/api/tasks/color`,
       obj,
       httpOptions
     );
@@ -128,7 +128,7 @@ export class TasksService {
       }),
     };
     return this.http.post<Answer>(
-      `http://localhost:8080/api/tasks/`,
+      `https://angular-server.onrender.com/api/tasks/`,
       obj,
       httpOptions
     );
@@ -141,6 +141,6 @@ export class TasksService {
       }),
     };
     return this.http
-    .put<Answer>(`http://localhost:8080/api/tasks/status`, obj, httpOptions)
+    .put<Answer>(`https://angular-server.onrender.com/api/tasks/status`, obj, httpOptions)
   }
 }
